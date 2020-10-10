@@ -1,26 +1,26 @@
+# # -*- coding: utf-8 -*-
 # CryptoHacks - BE Smart 2020
 # File Name CognitiveVision.py
 
-from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes 
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes 
-from msrest.authentication import CognitiveServicesCredentials
+from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
+from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
+from msrest.authentication import ApiKeyCredentials
 
-from array import array
-import os
-from PIL import Image
-import sys
-import time
+ENDPOINT = "<your API endpoint>"
 
-# Add your Computer Vision subscription key to your environment variables.
-if '220f315b4a95497fa97fa448ab1a4e1d' in os.environ:
-    subscription_key = os.environ['220f315b4a95497fa97fa448ab1a4e1d']
-else:
-    print("\nSet the 220f315b4a95497fa97fa448ab1a4e1d environment variable.\n**Restart your shell or IDE for changes to take effect.**")
-    sys.exit()
-# Add your Computer Vision endpoint to your environment variables.
-if 'https://cyrptocomputervision.cognitiveservices.azure.com/' in os.environ:
-    endpoint = os.environ['https://cyrptocomputervision.cognitiveservices.azure.com/']
-else:
-    print("\nSet the https://cyrptocomputervision.cognitiveservices.azure.com/ environment variable.\n**Restart your shell or IDE for changes to take effect.**")
-    sys.exit()
+# Replace with a valid key
+training_key = "<your training key>"
+prediction_key = "<your prediction key>"
+prediction_resource_id = "<your prediction resource id>"
+
+publish_iteration_name = "detectModel"
+
+credentials = ApiKeyCredentials(in_headers={"Training-key": training_key})
+trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
+
+# Find the object detection domain
+obj_detection_domain = next(domain for domain in trainer.get_domains() if domain.type == "ObjectDetection" and domain.name == "General")
+
+# Create a new project
+print ("Creating project...")
+project = trainer.create_project("My Detection Project", domain_id=obj_detection_domain.id)

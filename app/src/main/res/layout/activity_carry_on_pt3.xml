@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".CarryOnActivityPt3">
+
+    <Spinner
+        android:id="@+id/num_bags"
+        android:layout_width="258dp"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="148dp" />
+
+    <Button
+        android:id="@+id/continue_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <TextView
+        android:id="@+id/num_bags_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Bags:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
