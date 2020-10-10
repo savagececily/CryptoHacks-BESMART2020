@@ -9,6 +9,7 @@ from msrest.authentication import ApiKeyCredentials
 ENDPOINT = "https://cryptohacks-cognitiveservice.cognitiveservices.azure.com/"
 
 publish_iteration_name = "PublishCryptoHacks1";
+project = "CryptoHacks-CustomVision"
 
 # Replace with a valid key
 training_key = "ecf0252f958e4709bdb832c0899af10a"
