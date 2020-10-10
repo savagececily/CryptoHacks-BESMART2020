@@ -1,7 +1,9 @@
 package com.cryptohacks.overhead;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +29,27 @@ public class CustomerLoginActivity extends AppCompatActivity {
     }
 
     public void openActivity() {
-        Intent intent = new Intent(this, CarryOnActivityPt1.class);
-        startActivity(intent);
+        // Confirm Matching User/Flight - Teradata
+        if(getResult()){
+            Intent intent = new Intent(this, CarryOnActivityPt1.class);
+            startActivity(intent);
+        }
+        else{
+            new AlertDialog.Builder(this)
+                    .setMessage("Last Name and Flight Confirmation do not match.")
+                    .setPositiveButton("Try Again.", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    }).create().show();
+        }
+
+    }
+
+    private boolean getResult(){
+        // Comfirm Matching User/Flight
+
+        return true;
     }
 }
