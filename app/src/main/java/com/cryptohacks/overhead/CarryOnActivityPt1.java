@@ -10,13 +10,16 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class CarryOnActivityPt1 extends AppCompatActivity {
-    private int CAMERA_PERMISSION_CODE = 1;
-    Button yes;
+    public static final int RequestPermissionCode = 1;
+    private Button yes;
+    private Button no;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +30,26 @@ public class CarryOnActivityPt1 extends AppCompatActivity {
         yes.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                openActivity();
+                openYesActivity();
+            }
+        });
 
-                if (ContextCompat.checkSelfPermission(CarryOnActivityPt1.this,
-                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-                    //Intent intent = new Intent(this, ActivityName.class);
-                    //startActivity(intent);
-                }
-                else {
-                   // requestCameraPermission();
-                }
+        no = (Button) findViewById(R.id.no_button);
+        no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFinalActivity();
             }
         });
     }
-    private void openActivity(){
+
+    private void openYesActivity(){
         Intent intent = new Intent(this, CarryOnActivityPt2.class);
+        startActivity(intent);
+    }
+
+    private void openFinalActivity(){
+        Intent intent = new Intent(this, NoCarryOnActivity.class);
         startActivity(intent);
     }
  /*   private void requestCameraPermission(){

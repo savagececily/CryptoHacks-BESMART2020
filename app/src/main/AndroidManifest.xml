@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmployeeLoginActivity"></activity>
+        <activity android:name=".PhotoActivity"></activity>
+        <activity android:name=".EmployeeLoginActivity" />
         <activity android:name=".CarryOnAvailableActivity" />
         <activity android:name=".NoCarryOnActivity" />
         <activity android:name=".CarryOnActivityPt3" />
