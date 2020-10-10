@@ -3,7 +3,7 @@ from teradataml import *
 
 connection_name = create_context(host = "", username="be_tuskegee", password = "be_tuskegee")
 
-df = DataFrame("SOME_VIEW")
+df = DataFrame("BAG_SCAN_DETAILS")
 
 for i in df
 	print (i)
