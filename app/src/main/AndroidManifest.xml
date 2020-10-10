@@ -11,15 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CarryOnAvailableActivity"></activity>
+        <activity android:name=".EmployeeLoginActivity"></activity>
+        <activity android:name=".CarryOnAvailableActivity" />
         <activity android:name=".NoCarryOnActivity" />
         <activity android:name=".CarryOnActivityPt3" />
         <activity android:name=".CarryOnActivityPt2" />
         <activity android:name=".CarryOnActivityPt1" />
         <activity android:name=".CustomerLoginActivity" />
-        <activity
-            android:name=".ui.login.CustomerLoginActivity"
-            android:label="@string/title_activity_customer_login" />
         <activity android:name=".UserTypeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

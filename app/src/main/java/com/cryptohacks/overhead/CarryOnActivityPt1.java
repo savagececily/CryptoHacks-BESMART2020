@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -26,17 +27,23 @@ public class CarryOnActivityPt1 extends AppCompatActivity {
         yes.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                /*if (ContextCompat.checkSelfPermission(CarryOnActivityPt1.this,
+                openActivity();
+
+                if (ContextCompat.checkSelfPermission(CarryOnActivityPt1.this,
                         Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     //Intent intent = new Intent(this, ActivityName.class);
                     //startActivity(intent);
-                } else {
+                }
+                else {
                    // requestCameraPermission();
-                }*/
+                }
             }
         });
     }
-
+    private void openActivity(){
+        Intent intent = new Intent(this, CarryOnActivityPt2.class);
+        startActivity(intent);
+    }
  /*   private void requestCameraPermission(){
         if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)){
             new AlertDialog.Builder(this)

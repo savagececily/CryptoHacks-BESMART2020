@@ -18,15 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
         start_button = (Button) findViewById(R.id.get_started_button);
 
-        start_button.setOnClickListener((new View.OnClickListener(){
+        start_button.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v){
                 openActivity();
             }
-        }));
+        });
 
     }
+
     public void openActivity(){
         Intent intent = new Intent(this, UserTypeActivity.class);
         startActivity(intent);

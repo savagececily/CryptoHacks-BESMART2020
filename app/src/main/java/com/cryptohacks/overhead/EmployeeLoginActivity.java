@@ -7,15 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class CustomerLoginActivity extends AppCompatActivity {
-
+public class EmployeeLoginActivity extends AppCompatActivity {
     private Button next;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_login);
-
+        setContentView(R.layout.activity_employee_login);
         next = (Button) findViewById(R.id.next_button);
         next.setOnClickListener(new View.OnClickListener() {
             @Override

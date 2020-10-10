@@ -20,16 +20,29 @@ public class UserTypeActivity extends AppCompatActivity {
         customerButton = (Button) findViewById(R.id.customer_button);
         employeeButton = (Button) findViewById((R.id.employee_button));
 
-        customerButton.setOnClickListener(new View.OnClickListener() {
+        customerButton.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v){
-                openActivity();
+                openCustomerActivity();
+            }
+        });
+        employeeButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                openEmployeeActivity();
             }
         });
 
+
     }
-    public void openActivity(){
+    public void openCustomerActivity(){
         Intent intent = new Intent(this, CustomerLoginActivity.class);
+        startActivity(intent);
+    }
+    public void openEmployeeActivity(){
+        Intent intent = new Intent(this, EmployeeLoginActivity.class);
         startActivity(intent);
     }
 }
