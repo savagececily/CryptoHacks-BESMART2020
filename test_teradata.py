@@ -5,7 +5,6 @@ connection_name = create_context(host = "http://tdchackathon1.eastus.cloudapp.az
 
 df = DataFrame.from_table("BAG_SCAN_DETAILS")
 
-for i in df
-	print (i)
+df
 
 remove_context()
